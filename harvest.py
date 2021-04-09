@@ -9,20 +9,29 @@ class MelonType(object):
     def __init__(self, code, first_harvest, color, is_seedless, is_bestseller, 
                  name):
         """Initialize a melon."""
-
+        
         self.pairings = []
 
         # Fill in the rest
+        self.code = code
+        self.first_harvest = first_harvest
+        self.color = color
+        self.is_seedless = is_seedless
+        self.is_bestseller = is_bestseller
+        self.name = name
 
     def add_pairing(self, pairing):
         """Add a food pairing to the instance's pairings list."""
 
         # Fill in the rest
+        self.pairings.append(pairing)
 
     def update_code(self, new_code):
         """Replace the reporting code with the new_code."""
 
         # Fill in the rest
+        self.code = new_code
+
 
 
 def make_melon_types():
@@ -30,8 +39,23 @@ def make_melon_types():
 
     all_melon_types = []
 
-    # Fill in the rest
+    #Fill in the rest
+    muskmelon = MelonType('musk', 1998, 'green', True, True, 'Muskmelon')
+    muskmelon.add_pairing("mint")
+    all_melon_types.append(muskmelon)
 
+    casaba = MelonType('cas', 2003, 'orange', False, False, 'Casaba')
+    casaba.add_pairing("strawberries and mint")
+    all_melon_types.append(casaba)
+
+    crenshaw = MelonType('cren', 1996, 'green', False, False, "Crenshaw")
+    crenshaw.add_pairing("prosciutto")
+    all_melon_types.append(crenshaw)
+
+    yellow-watermelon = MelonType('yw', 2013, 'yellow', False, True, "Yellow Watermelon")
+    yellow-watermelon.add_pairing("ice cream")
+    all_melon_types.append(yellow-watermelon)
+    
     return all_melon_types
 
 def print_pairing_info(melon_types):
